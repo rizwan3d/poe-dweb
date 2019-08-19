@@ -4,5 +4,5 @@
     $command = $command . '{"method":"getinfo", "params":[], "id":"4"}';
     $command = $command . "' -H 'content-type: text/plain;' localhost:2686/";
     echo $command;
-    echo shell_exec($command);
+    echo exec($command);
 ?>
