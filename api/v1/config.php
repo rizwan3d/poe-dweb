@@ -14,7 +14,7 @@
 return array(
      'rk_user' => 'multichainrpc',
      'rk_pass' => 'F1oHsbZnRtbxqSr5T5NVXYbfFUMmkT73DV7vYTE7Fi93',
-     "rk_host" => 'localhost',
+     "rk_host" => '127.0.0.1',
      "rk_port" => '2686',
      "chain_name" => 'chain1',
      'address' => "179Qh3QXhZufGpbLt3Uf54e7hrW4cZLvAEPrFy"
