@@ -20,9 +20,9 @@ $( "#uploadForm" ).submit(function( event ) {
      data:{ signature : signature, dataHex: dataHex},
      success:function(Response) {                
               var x = Response;
-              x = JSON.parse(x);  
-              var tx_id = x.result;
-              var link = "http://www.localhost:8080/poe/details.php?signature=" + tx_id;
+              //x = JSON.parse(x);  
+              //var tx_id = x.result;
+              var link = "http://www.localhost:8080/poe/details.php?signature=" + x;
               $("#upload").hide();   
               var qrcode = new QRCode("qrcode");
               qrcode.makeCode(link);

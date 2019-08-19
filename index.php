@@ -8,9 +8,8 @@
       <div class="container">
 
         <header class="section-header">
-          <h3>Publish PoE</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.</p>
+          <h3>Publish Document</h3>
+          <p>Select document and fill the form to publish it on Blockchain.</p>
         </header>
 
         <div class="wow fadeInUp">
@@ -36,11 +35,11 @@
               </div>
               <div class="form-row">
                 <div class="form-group col-lg-6">
-                  <input type="file" id="document" class="form-control" accept='*' placeholder="Select file" />
+                  <input type="file" id="document" class="form-control" accept='*' placeholder="Select file" style="padding-bottom: 44px !important;"/>
                   <div class="validation"></div>
                 </div>
                 <div class="form-group col-lg-6">
-                  <input type="input" id="hash" class="form-control" placeholder="hash" disabled/>
+                  <input type="input" id="hash" class="form-control" placeholder="hash" disabled style="padding-bottom: 24px !important;padding-top: 24px !important;"/>
                   <div class="validation"></div>
                 </div>
               </div>

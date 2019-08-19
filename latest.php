@@ -9,8 +9,6 @@
 
         <header class="section-header">
           <h3>Recently Generated PoE</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.</p>
         </header>
         <div class="table-responsive">
                 <table class="table table-striped table-hover" id="recently_published"></table>
