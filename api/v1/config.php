@@ -10,22 +10,22 @@
 //  'address' => "1UKJvibJC5fhdRJR3DNL5EYG7nAQe9xLhhCTyM"
 //  );
 
-$tt = 0;
+//$tt = 0;
 
 
-if($tt == 1){
-return array(
-     'rk_user' => 'multichainrpc',
-     'rk_pass' => 'HqbqAf85sgDM9aNVdg6fEEXds5d2vYTbNFW4M7Ri7uPr',
-     "rk_host" => 'localhost',
-     "rk_port" => '4790',
-     "chain_name" => 'chain1',
-     'address' => "1FUZyqq1JWHKxZAyoPeQmhPgK5cyTD7LzNZunE"
-     );
-}
+// if($tt == 1){
+// return array(
+//      'rk_user' => 'multichainrpc',
+//      'rk_pass' => 'HqbqAf85sgDM9aNVdg6fEEXds5d2vYTbNFW4M7Ri7uPr',
+//      "rk_host" => 'localhost',
+//      "rk_port" => '4790',
+//      "chain_name" => 'chain1',
+//      'address' => "1FUZyqq1JWHKxZAyoPeQmhPgK5cyTD7LzNZunE"
+//      );
+// }
 
-else 
-{     
+// else 
+// {     
 return array(
      'rk_user' => 'multichainrpc',
      'rk_pass' => '8smWyPTC4hakqTP6zWH6Z3VJQqBf7benXTtyYbD4eSWL',
@@ -34,4 +34,4 @@ return array(
      "chain_name" => 'chain1',
      'address' => "13LFV8mUFYVTLyTspAzAYTsYom6hBVfniSGS7i"
      );
-}
+//}
