@@ -30,7 +30,7 @@ return array(
      'rk_user' => 'multichainrpc',
      'rk_pass' => '8smWyPTC4hakqTP6zWH6Z3VJQqBf7benXTtyYbD4eSWL',
      "rk_host" => 'localhost',
-     "rk_port" => '6807',
+     "rk_port" => '6806',
      "chain_name" => 'chain1',
      'address' => "13LFV8mUFYVTLyTspAzAYTsYom6hBVfniSGS7i"
      );
