@@ -68,7 +68,7 @@
 
     <div class="container">
         <div class="copyright">
-            &copy; Copyright <strong>NewBiz</strong>. All Rights Reserved
+            &copy; Copyright <strong>dBlock</strong>. All Rights Reserved
         </div>
         <div class="credits">
             <!--
