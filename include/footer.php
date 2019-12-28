@@ -1,4 +1,4 @@
-<?php include 'samedata.php'; ?>
+<?php include 'about.php'; ?>
 
 <?php include 'contact.php'; ?>
 
