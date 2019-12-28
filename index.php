@@ -87,9 +87,6 @@
 
     </section><!-- #upload  -->
 
-    <?php include 'samedata.php'; ?>
-
-
     <?php include 'include/footer.php'; ?>
 
     

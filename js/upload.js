@@ -22,7 +22,7 @@ $( "#uploadForm" ).submit(function( event ) {
               var x = Response;
               //x = JSON.parse(x);  
               //var tx_id = x.result;
-              var link = "http://www.localhost:8080/poe/details.php?signature=" + x;
+              var link = "http://89.163.146.48/details.php?signature=" + x;
               $("#upload").hide();   
               var qrcode = new QRCode("qrcode");
               qrcode.makeCode(link);

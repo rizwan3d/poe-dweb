@@ -1,3 +1,5 @@
+<?php include 'samedata.php'; ?>
+
 <?php include 'contact.php'; ?>
 
   </main>
