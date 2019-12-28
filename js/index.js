@@ -1,16 +1,16 @@
 
-var chunkSize = 1024*1024; // bytes
+var chunkSize = 1024 * 1024; // bytes
 var timeout = 10; // millisec
 
 var inputElement = document.getElementById("document");
 inputElement.addEventListener("change", handleFiles, false);
-$("#document").click(function(event){
+$("#document").click(function (event) {
     clear();
 })
 
 function handleFiles() {
     var file = this.files[0];
-    if(file===undefined){
+    if (file === undefined) {
         return;
     }
     var SHA256 = CryptoJS.algo.SHA256.create();
@@ -30,7 +30,7 @@ function handleFiles() {
 
 };
 
-function clear(){
+function clear() {
     $("#hash").val('');
     lastOffset = 0;
     chunkReorder = 0;
@@ -40,21 +40,21 @@ function clear(){
 
 function loading(file, callbackProgress, callbackFinal) {
     //var chunkSize  = 1024*1024; // bytes
-    var offset     = 0;
-    var size=chunkSize;
+    var offset = 0;
+    var size = chunkSize;
     var partial;
     var index = 0;
 
-    if(file.size===0){
+    if (file.size === 0) {
         callbackFinal();
     }
     while (offset < file.size) {
-        partial = file.slice(offset, offset+size);
+        partial = file.slice(offset, offset + size);
         var reader = new FileReader;
         reader.size = chunkSize;
         reader.offset = offset;
         reader.index = index;
-        reader.onload = function(evt) {
+        reader.onload = function (evt) {
             callbackRead(this, file, evt, callbackProgress, callbackFinal);
         };
         reader.readAsArrayBuffer(partial);
@@ -63,8 +63,8 @@ function loading(file, callbackProgress, callbackFinal) {
     }
 }
 
-function callbackRead(obj, file, evt, callbackProgress, callbackFinal){
-    if( $("#switchMode").is(':checked') ){
+function callbackRead(obj, file, evt, callbackProgress, callbackFinal) {
+    if ($("#switchMode").is(':checked')) {
         callbackRead_buffered(obj, file, evt, callbackProgress, callbackFinal);
     } else {
         callbackRead_waiting(obj, file, evt, callbackProgress, callbackFinal);
@@ -75,33 +75,33 @@ var lastOffset = 0;
 var chunkReorder = 0;
 var chunkTotal = 0;
 // time reordering
-function callbackRead_waiting(reader, file, evt, callbackProgress, callbackFinal){
-    if(lastOffset === reader.offset) {
-        console.log("[",reader.size,"]",reader.offset,'->', reader.offset+reader.size,"");
-        lastOffset = reader.offset+reader.size;
+function callbackRead_waiting(reader, file, evt, callbackProgress, callbackFinal) {
+    if (lastOffset === reader.offset) {
+        console.log("[", reader.size, "]", reader.offset, '->', reader.offset + reader.size, "");
+        lastOffset = reader.offset + reader.size;
         callbackProgress(evt.target.result);
-        if ( reader.offset + reader.size >= file.size ){
+        if (reader.offset + reader.size >= file.size) {
             lastOffset = 0;
             callbackFinal();
         }
         chunkTotal++;
     } else {
-        console.log("[",reader.size,"]",reader.offset,'->', reader.offset+reader.size,"wait");
+        console.log("[", reader.size, "]", reader.offset, '->', reader.offset + reader.size, "wait");
         setTimeout(function () {
-            callbackRead_waiting(reader,file,evt, callbackProgress, callbackFinal);
+            callbackRead_waiting(reader, file, evt, callbackProgress, callbackFinal);
         }, timeout);
         chunkReorder++;
     }
 }
 // memory reordering
 var previous = [];
-function callbackRead_buffered(reader, file, evt, callbackProgress, callbackFinal){
+function callbackRead_buffered(reader, file, evt, callbackProgress, callbackFinal) {
     chunkTotal++;
 
-    if(lastOffset !== reader.offset){
+    if (lastOffset !== reader.offset) {
         // out of order
-        console.log("[",reader.size,"]",reader.offset,'->', reader.offset+reader.size,">>buffer");
-        previous.push({ offset: reader.offset, size: reader.size, result: reader.result});
+        console.log("[", reader.size, "]", reader.offset, '->', reader.offset + reader.size, ">>buffer");
+        previous.push({ offset: reader.offset, size: reader.size, result: reader.result });
         chunkReorder++;
         return;
     }
@@ -116,7 +116,7 @@ function callbackRead_buffered(reader, file, evt, callbackProgress, callbackFina
     }
 
     // in order
-    console.log("[",reader.size,"]",reader.offset,'->', reader.offset+reader.size,"");
+    console.log("[", reader.size, "]", reader.offset, '->', reader.offset + reader.size, "");
     parseResult(reader.offset, reader.size, reader.result);
 
     // resolve previous buffered
@@ -134,11 +134,11 @@ function callbackRead_buffered(reader, file, evt, callbackProgress, callbackFina
 
 }
 
-Array.prototype.remove = Array.prototype.remove || function(val){
+Array.prototype.remove = Array.prototype.remove || function (val) {
     var i = this.length;
-    while(i--){
-        if (this[i] === val){
-            this.splice(i,1);
+    while (i--) {
+        if (this[i] === val) {
+            this.splice(i, 1);
         }
     }
 };
@@ -161,14 +161,14 @@ function humanFileSize(bytes, si) {
 }
 
 
-function copyStringToClipboard (str) {
+function copyStringToClipboard(str) {
     // Create new element
     var el = document.createElement('textarea');
     // Set value (string to be copied)
     el.value = str;
     // Set non-editable to avoid focus and move outside of view
     el.setAttribute('readonly', '');
-    el.style = {position: 'absolute', left: '-9999px'};
+    el.style = { position: 'absolute', left: '-9999px' };
     document.body.appendChild(el);
     // Select text inside element
     el.select();
@@ -176,4 +176,4 @@ function copyStringToClipboard (str) {
     document.execCommand('copy');
     // Remove temporary element
     document.body.removeChild(el);
- }
+}
