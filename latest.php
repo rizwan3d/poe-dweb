@@ -21,7 +21,7 @@
 
 <?php include 'include/footer.php'; ?>
 
-<script src="js/upload.js"></script>
+<script src="js/latest.js"></script>
 
     
 
